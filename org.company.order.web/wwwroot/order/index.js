@@ -15,8 +15,8 @@ export class Index
         this.orderProducts = [];
         this.errorMessage = false;
     }
-
-    attached(){
+    
+    created(){
         this.service.getProducts().then( response => { this.products = response });
     }
 
@@ -35,11 +35,11 @@ export class Index
             let product = this.products.filter(p => p.productId == this.order.productId)[0];
             product.quantity = this.order.quantity;
             this.orderProducts.push(product);
-            this.clean();
+            this.clear();
         }
     }
 
-    clean(){
+    clear(){
         this.order.productId = "";
         this.order.quantity = "";
     }

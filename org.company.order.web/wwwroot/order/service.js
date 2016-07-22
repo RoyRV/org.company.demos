@@ -1,6 +1,8 @@
 ﻿import {inject} from 'aurelia-framework';
 import {GenericService} from 'services/generic-service';
 
+let _isProcesing = false;
+
 @inject(GenericService)
 export class Service
 {
